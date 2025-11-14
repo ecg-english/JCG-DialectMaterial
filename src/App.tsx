@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/JCG-DialectMaterial">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/region/:regionId" element={<RegionPage />} />
