@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { BookIcon, CardIcon, QuizIcon } from '../components/Icons';
 import { detailedDialectData } from '../data/detailedDialectData';
-import { Region } from '../types';
 import styles from './RegionPage.module.css';
 
 export const RegionPage: React.FC = () => {
@@ -269,7 +268,7 @@ interface QuizViewProps {
   regionName: string;
 }
 
-const QuizView: React.FC<QuizViewProps> = ({ phrases, color, regionName }) => {
+const QuizView: React.FC<QuizViewProps> = ({ phrases, color }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
