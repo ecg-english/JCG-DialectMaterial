@@ -1,0 +1,641 @@
+.container {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.header {
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.backButton:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin: 0 0 20px 0;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin: 10px auto;
+  max-width: 700px;
+}
+
+.descriptionEn {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #333;
+}
+
+.tab:hover {
+  background: #e0e0e0;
+}
+
+.activeTab {
+  background: #667eea;
+  color: white;
+}
+
+.main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 細分化された方言選択UI */
+.subDialectSelector {
+  margin-bottom: 40px;
+}
+
+.subDialectTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subDialectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.subDialectCard {
+  background: white;
+  border: 3px solid;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subDialectCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.selectedSubDialect {
+  border-width: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.subDialectColorBar {
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.subDialectName {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.subDialectNameEn {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
+  opacity: 0.7;
+}
+
+.subDialectDescription {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.noPhrasesMessage {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* フレーズ一覧 */
+.phrasesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.phraseCard {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.phraseCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.phraseHeader {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.dialect {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.romaji {
+  font-size: 1rem;
+  color: #888;
+  font-style: italic;
+}
+
+.phraseBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 600;
+  color: #666;
+  min-width: 80px;
+}
+
+.example {
+  margin-top: 12px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #5568d3;
+}
+
+.exampleTitle {
+  font-weight: 600;
+  color: #5568d3;
+  margin-bottom: 8px;
+}
+
+.exampleText {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.exampleTranslation {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.exampleMeaning {
+  font-size: 0.9rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* フラッシュカード */
+.flashcardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.progress {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.flashcard {
+  width: 100%;
+  max-width: 500px;
+  height: 400px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border: 4px solid;
+  position: relative;
+}
+
+.flashcard:hover {
+  transform: scale(1.02);
+}
+
+.flashcardFront,
+.flashcardBack {
+  text-align: center;
+  width: 100%;
+}
+
+.flashcardDialect {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.flashcardRomaji {
+  font-size: 1.3rem;
+  color: #888;
+  font-style: italic;
+}
+
+.flashcardStandard {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5568d3;
+  margin-bottom: 20px;
+}
+
+.flashcardMeaning {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.flashcardExample {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.flashcardExampleTitle {
+  font-weight: 600;
+  color: #5568d3;
+  margin-bottom: 10px;
+}
+
+.flashcardExampleTranslation {
+  margin-top: 8px;
+  color: #666;
+}
+
+.flashcardExampleMeaning {
+  margin-top: 8px;
+  color: #888;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.flashcardHint {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+}
+
+.flashcardControls {
+  display: flex;
+  gap: 20px;
+}
+
+.controlButton {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #5568d3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.controlButton:hover {
+  background: #4557c2;
+  transform: translateY(-2px);
+}
+
+/* クイズ */
+.quizContainer {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.quizProgress {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.quizCard {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.quizQuestion {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.quizDialect {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.quizRomaji {
+  font-size: 1.2rem;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.quizPrompt {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.quizOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.quizOption {
+  padding: 18px;
+  font-size: 1.1rem;
+  background: white;
+  border: 3px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+  text-align: left;
+}
+
+.quizOption:hover:not(:disabled) {
+  border-color: #5568d3;
+  background: #f8f9ff;
+}
+
+.quizOption.selected {
+  border-color: #5568d3;
+  background: #f0f2ff;
+}
+
+.quizOption.correct {
+  border-color: #4CAF50 !important;
+  background: #E8F5E9 !important;
+}
+
+.quizOption.wrong {
+  border-color: #f44336 !important;
+  background: #FFEBEE !important;
+}
+
+.quizOption:disabled {
+  cursor: not-allowed;
+}
+
+.quizFeedback {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.feedbackCorrect {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.feedbackWrong {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f44336;
+  margin-bottom: 20px;
+}
+
+.correctAnswerHint {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.nextButton {
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.nextButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.quizResults {
+  background: white;
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.quizResults h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.finalScore {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #5568d3;
+  margin-bottom: 10px;
+}
+
+.scoreNumber {
+  color: #4CAF50;
+}
+
+.scoreDivider {
+  color: #ccc;
+  margin: 0 10px;
+}
+
+.scoreTotal {
+  color: #666;
+}
+
+.scorePercentage {
+  font-size: 2rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.scoreMessage {
+  font-size: 1.3rem;
+  color: #666;
+  margin: 20px 0 40px 0;
+}
+
+.restartButton {
+  padding: 16px 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.restartButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.error {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.error h2 {
+  font-size: 2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.error button {
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #5568d3;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.error button:hover {
+  background: #4557c2;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .phrasesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .flashcard {
+    height: 350px;
+    padding: 30px;
+  }
+
+  .flashcardDialect {
+    font-size: 2.5rem;
+  }
+
+  .flashcardStandard {
+    font-size: 2rem;
+  }
+
+  .quizCard {
+    padding: 25px;
+  }
+
+  .quizDialect {
+    font-size: 2rem;
+  }
+
+  .backButton {
+    position: static;
+    margin-bottom: 20px;
+  }
+}
+
